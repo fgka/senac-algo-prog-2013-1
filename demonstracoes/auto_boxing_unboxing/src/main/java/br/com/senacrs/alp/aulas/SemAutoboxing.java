@@ -5,15 +5,22 @@ public class SemAutoboxing {
 	
 	public static void main(String[] args) {
 		
-		consumirMemoriaComAutoBoxing();		
+		
+		MonitorMemoria monitor = null;
+		Thread thread = null; 
+		
+		monitor = new MonitorMemoria();
+		monitor.escreverOcupacaoSystemStdOut();
+		thread = new Thread(monitor);
+		thread.start();
+		consumirMemoriaSemAutoBoxing();		
 	}
 
-	private static void consumirMemoriaComAutoBoxing() {
+	private static void consumirMemoriaSemAutoBoxing() {
 
 		Double var = null;
 		double varVal = 0.0;
 		
-		System.out.println("Abra o gerenciador de tarefas ou outro monitor de memoria");
 		var = Double.valueOf(2.0);
 		varVal = var.doubleValue();
 		while (true) {

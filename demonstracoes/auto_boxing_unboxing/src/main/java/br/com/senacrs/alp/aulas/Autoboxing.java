@@ -5,6 +5,13 @@ public class Autoboxing {
 	
 	public static void main(String[] args) {
 		
+		MonitorMemoria monitor = null;
+		Thread thread = null; 
+		
+		monitor = new MonitorMemoria();
+		monitor.escreverOcupacaoSystemStdOut();
+		thread = new Thread(monitor);
+		thread.start();
 		consumirMemoriaComAutoBoxing();		
 	}
 
@@ -12,7 +19,6 @@ public class Autoboxing {
 
 		Double var = null;
 		
-		System.out.println("Abra o gerenciador de tarefas ou outro monitor de memoria");
 		var = 2.0;
 		while (true) {
 			var *= var;
