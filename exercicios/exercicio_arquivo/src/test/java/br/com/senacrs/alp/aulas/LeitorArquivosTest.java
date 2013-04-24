@@ -106,7 +106,7 @@ public class LeitorArquivosTest {
 
 		String resultado = null;
 
-		resultado = RandomStringUtils.random(tamanhoAleatorio());
+		resultado = RandomStringUtils.randomAlphanumeric(tamanhoAleatorio());
 
 		return resultado;
 	}
