@@ -23,7 +23,7 @@ public class LeitorArquivosTest {
 	private final static String NOME_ARQUIVO_ENTRADA = "arquivo.txt";
 	private final static String ARQUIVO_ENTRADA = DIRETORIO_ENTRADA
 			+ NOME_ARQUIVO_ENTRADA;
-	private static final String NL = System.getProperty("new.line");
+	private static final String NL = System.getProperty("line.separator");
 	private static final Random rand = new Random(System.currentTimeMillis());
 	private static final Factory factory = Factory.getInstancia();
 	private LeitorArquivos obj = null;
