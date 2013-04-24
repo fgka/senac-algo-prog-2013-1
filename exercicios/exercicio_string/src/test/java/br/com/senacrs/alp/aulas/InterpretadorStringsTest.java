@@ -61,7 +61,7 @@ public class InterpretadorStringsTest {
 		for (String c : COMENTARIOS) {
 			resultado = obj.lerString(c);
 			msg = String.format(tmpl, c);
-			Assert.assertEquals(msg, TIPO_STRING.MAL_FORMADA, resultado);			
+			Assert.assertEquals(msg, TIPO_STRING.COMENTARIO, resultado);			
 		}
 	}
 
