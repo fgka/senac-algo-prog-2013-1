@@ -178,15 +178,16 @@ public class ListaConteudoDiretorioTest {
 		String[] resultado = null;
 		String esperado = null;
 		File arq = null;
+		boolean canSetExecutable = false;
 		
 		arq = criarArquivo();
-		arq.setReadable(true);
-		arq.setWritable(false);
-		arq.setExecutable(false);
+		Assert.assertTrue(arq.setReadable(true));
+		Assert.assertTrue(arq.setWritable(false));
+		canSetExecutable = arq.setExecutable(false);
 		esperado = "" + ListaConteudoDiretorio.NADA_CONSTA + ListaConteudoDiretorio.SEPARADOR
 				+ ListaConteudoDiretorio.PERMISSAO_LEITURA 
 				+ ListaConteudoDiretorio.NADA_CONSTA
-				+ ListaConteudoDiretorio.NADA_CONSTA + ListaConteudoDiretorio.SEPARADOR
+				+ (canSetExecutable ? ListaConteudoDiretorio.NADA_CONSTA : ListaConteudoDiretorio.PERMISSAO_EXECUCAO) + ListaConteudoDiretorio.SEPARADOR
 				+ arq.length() + ListaConteudoDiretorio.SEPARADOR
 				+ arq.getName();
 		resultado = obj.listarConteudo(diretorio);
@@ -200,15 +201,16 @@ public class ListaConteudoDiretorioTest {
 		String[] resultado = null;
 		String esperado = null;
 		File arq = null;
+		boolean canSetExecutable = false;
 		
 		arq = criarSubDiretorio();
 		arq.setReadable(false);
 		arq.setWritable(true);
-		arq.setExecutable(false);
+		canSetExecutable = arq.setExecutable(false);
 		esperado = "" + ListaConteudoDiretorio.IDENTIFICA_DIRETORIO + ListaConteudoDiretorio.SEPARADOR
 				+ ListaConteudoDiretorio.NADA_CONSTA 
 				+ ListaConteudoDiretorio.PERMISSAO_ESCRITA
-				+ ListaConteudoDiretorio.NADA_CONSTA + ListaConteudoDiretorio.SEPARADOR
+				+ (canSetExecutable ? ListaConteudoDiretorio.NADA_CONSTA : ListaConteudoDiretorio.PERMISSAO_EXECUCAO) + ListaConteudoDiretorio.SEPARADOR
 				+ arq.length() + ListaConteudoDiretorio.SEPARADOR
 				+ arq.getName();
 		resultado = obj.listarConteudo(diretorio);
