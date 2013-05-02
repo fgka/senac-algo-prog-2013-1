@@ -138,7 +138,9 @@ public class ListaConteudoDiretorioTest {
 		
 		exception.expect(IllegalArgumentException.class);
 		dir = criarSubDiretorio();
-		dir.setReadable(false);
+		if (dir.setReadable(false)) {
+			throw new IllegalArgumentException();
+		}
 		obj.listarConteudo(dir);
 	}
 
