@@ -206,12 +206,10 @@ public class ListaConteudoDiretorioTest {
 		boolean canSetExecutable = false;
 		
 		arq = criarSubDiretorio();
-		Assert.assertTrue(arq.setReadable(true));
-		Assert.assertTrue(arq.setWritable(false));
 		canSetExecutable = arq.setExecutable(false);
 		esperado = "" + ListaConteudoDiretorio.IDENTIFICA_DIRETORIO + ListaConteudoDiretorio.SEPARADOR
 				+ ListaConteudoDiretorio.PERMISSAO_LEITURA
-				+ ListaConteudoDiretorio.NADA_CONSTA
+				+ ListaConteudoDiretorio.PERMISSAO_ESCRITA
 				+ (canSetExecutable ? ListaConteudoDiretorio.NADA_CONSTA : ListaConteudoDiretorio.PERMISSAO_EXECUCAO) + ListaConteudoDiretorio.SEPARADOR
 				+ arq.length() + ListaConteudoDiretorio.SEPARADOR
 				+ arq.getName();
