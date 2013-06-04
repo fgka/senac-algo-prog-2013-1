@@ -58,7 +58,7 @@ public class ConfiguracaoTest {
 	private final static String ROOT_DIR = "./html";
 	private final static String ROOT_DIR_NOK = "./html_inexistente";
 	private final static String ERROR_DIR = "./html/error/";
-	private final static String ERROR_DIR_NOK = "./html_inexistente/error/";
+	private final static String ERROR_DIR_NOK = "./html/error_empty/";
 	private final static int PORT = 54321;
 	private static final Factory factory = Factory.getInstancia();
 
@@ -88,7 +88,7 @@ public class ConfiguracaoTest {
 		obj = criarConfiguracao(config);
 		Assert.assertNotNull(obj);
 		Assert.assertNotNull(obj.getArquivoConfiguracao());
-		Assert.assertTrue(config.equals(obj.getArquivoConfiguracao()));
+		Assert.assertTrue(config.toString(), config.equals(obj.getArquivoConfiguracao()));
 	}
 
 	@Test
@@ -100,7 +100,7 @@ public class ConfiguracaoTest {
 		config = criarArquivoConfiguracao();
 		obj = criarConfiguracao(config);
 		Assert.assertNotNull(obj);
-		Assert.assertTrue(obj.valido());
+		Assert.assertTrue(config.toString(), obj.valido());
 	}
 
 	private MeuArquivoConfiguracao criarArquivoConfiguracao() {
@@ -125,7 +125,7 @@ public class ConfiguracaoTest {
 		config.rootDir = ROOT_DIR_NOK; 
 		obj = criarConfiguracao(config);
 		Assert.assertNotNull(obj);
-		Assert.assertFalse(obj.valido());
+		Assert.assertFalse(config.toString(), obj.valido());
 	}
 
 	@Test
@@ -138,7 +138,7 @@ public class ConfiguracaoTest {
 		config.errorDir = ERROR_DIR_NOK; 
 		obj = criarConfiguracao(config);
 		Assert.assertNotNull(obj);
-		Assert.assertFalse(obj.valido());
+		Assert.assertFalse(config.toString(), obj.valido());
 	}
 
 	@Test
@@ -151,7 +151,7 @@ public class ConfiguracaoTest {
 		config.port = -1; 
 		obj = criarConfiguracao(config);
 		Assert.assertNotNull(obj);
-		Assert.assertFalse(obj.valido());
+		Assert.assertFalse(config.toString(), obj.valido());
 	}
 
 	@Test
@@ -164,7 +164,7 @@ public class ConfiguracaoTest {
 		config.port = 1023; 
 		obj = criarConfiguracao(config);
 		Assert.assertNotNull(obj);
-		Assert.assertFalse(obj.valido());
+		Assert.assertFalse(config.toString(), obj.valido());
 	}
 
 	@Test
