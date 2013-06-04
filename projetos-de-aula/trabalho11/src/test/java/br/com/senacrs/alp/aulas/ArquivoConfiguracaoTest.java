@@ -27,7 +27,7 @@ public class ArquivoConfiguracaoTest {
 	private static final Factory factory = Factory.getInstancia();
 
 	@Test
-	public void testEmissorMensagensNull() {
+	public void testArquivoConfiguracaoNull() {
 
 		try {
 			criarArquivoConfiguracao(null);
@@ -43,7 +43,7 @@ public class ArquivoConfiguracaoTest {
 	}
 
 	@Test
-	public void testEmissorMensagensDiretorio() {
+	public void testArquivoConfiguracaoDiretorio() {
 
 		try {
 			criarArquivoConfiguracao(DIRETORIO_ENTRADA);
@@ -54,7 +54,7 @@ public class ArquivoConfiguracaoTest {
 	}
 
 	@Test
-	public void testEmissorMensagensInexistente() {
+	public void testArquivoConfiguracaoInexistente() {
 
 		try {
 			criarArquivoConfiguracao(nomeCompleto(NOME_ARQUIVO_OK)
@@ -71,7 +71,7 @@ public class ArquivoConfiguracaoTest {
 	}
 
 	@Test
-	public void testEmissorMensagensFormatoIncorreto() {
+	public void testArquivoConfiguracaoFormatoIncorreto() {
 
 		for (String arq : NOME_ARQUIVO_NOK) {
 			try {
@@ -84,7 +84,7 @@ public class ArquivoConfiguracaoTest {
 	}
 
 	@Test
-	public void testEmissorMensagensFormatoCorreto() {
+	public void testArquivoConfiguracaoFormatoCorreto() {
 
 		ArquivoConfiguracao obj = null;
 		
