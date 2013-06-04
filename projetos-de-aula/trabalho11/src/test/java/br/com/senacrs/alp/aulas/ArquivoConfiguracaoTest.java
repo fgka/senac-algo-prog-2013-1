@@ -88,7 +88,7 @@ public class ArquivoConfiguracaoTest {
 
 		ArquivoConfiguracao obj = null;
 		
-		obj = criarArquivoConfiguracao(NOME_ARQUIVO_OK);
+		obj = criarArquivoConfiguracao(nomeCompleto(NOME_ARQUIVO_OK));
 		Assert.assertNotNull(obj);
 		Assert.assertEquals(ROOT_DIR, obj.getRootDir());
 		Assert.assertEquals(ERROR_DIR, obj.getErrorDir());
