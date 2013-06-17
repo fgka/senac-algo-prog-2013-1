@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>br.com.senacrs.alp.aulas</groupId>
-	<artifactId>trabalho14</artifactId>
+	<artifactId>trabalho15</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>trabalho14</name>
+	<name>trabalho15</name>
 	<url>http://maven.apache.org</url>
 
 
